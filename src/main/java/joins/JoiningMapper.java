@@ -14,11 +14,6 @@ import org.apache.hadoop.mapreduce.lib.input.FileSplit;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * User: Bill Bejeck
- * Date: 6/8/13
- * Time: 10:12 PM
- */
 public class JoiningMapper extends Mapper<LongWritable, Text, TaggedKey, Text> {
 
     private int keyIndex;

@@ -10,11 +10,7 @@ import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
 
-/**
- * User: Bill Bejeck
- * Date: 6/8/13
- * Time: 9:26 PM
- */
+
 public class JoiningReducer extends Reducer<TaggedKey, Text, NullWritable, Text> {
 
     private Text joinedText = new Text();

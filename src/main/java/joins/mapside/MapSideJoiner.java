@@ -1,10 +1,8 @@
-package joins;
+package joins.mapside;
 
-/**
- * Created by kostas on 05/04/16.
- */
 import com.google.common.base.Splitter;
 import com.google.common.collect.Iterables;
+import joins.*;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
@@ -13,12 +11,9 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 /**
- * User: Bill Bejeck
- * Date: 6/11/13
- * Time: 9:27 PM
+ * Created by kostas on 07/04/16.
  */
-public class ReduceSideJoin{
-
+public class MapSideJoiner {
 
     public static void main(String[] args) throws Exception {
         Splitter splitter = Splitter.on('/');
@@ -40,7 +35,7 @@ public class ReduceSideJoin{
         job.setJarByClass(ReduceSideJoin.class);
 
         FileInputFormat.addInputPaths(job, filePaths.toString());
-        FileOutputFormat.setOutputPath(job, new Path(args[args.length-1]));
+        FileOutputFormat.setOutputPath(job, new Path(args[args.length - 1]));
 
         job.setMapperClass(JoiningMapper.class);
         job.setReducerClass(JoiningReducer.class);
@@ -52,3 +47,4 @@ public class ReduceSideJoin{
 
     }
 }
+
