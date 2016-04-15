@@ -31,7 +31,7 @@ public class TaggedKey implements Writable, WritableComparable<TaggedKey> {
         this.tag.set(tag);
     }
 
-    @Override
+
     public int compareTo(TaggedKey taggedKey) {
         int compareValue = this.joinKey.compareTo(taggedKey.getJoinKey());
         if(compareValue == 0 ){
@@ -46,13 +46,13 @@ public class TaggedKey implements Writable, WritableComparable<TaggedKey> {
         return taggedKey;
     }
 
-    @Override
+
     public void write(DataOutput out) throws IOException {
         joinKey.write(out);
         tag.write(out);
     }
 
-    @Override
+   
     public void readFields(DataInput in) throws IOException {
         joinKey.readFields(in);
         tag.readFields(in);
