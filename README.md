@@ -1,1 +1,1 @@
-https://github.com/bbejeck/hadoop-algorithms/tree/master/src/bbejeck/mapred/joins/reduce
+m/r examples
